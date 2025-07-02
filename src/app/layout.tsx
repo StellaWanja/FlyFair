@@ -1,14 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Square_Peg, Montserrat, League_Spartan } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/common/Navbar/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const squarePeg = Square_Peg({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-decorative",
+});
+
+const montserrat = Montserrat({
+  variable: "--font-body",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const leagueSpartan = League_Spartan({
+  variable: "--font-heading",
   subsets: ["latin"],
 });
 
@@ -25,8 +32,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${squarePeg.variable} ${montserrat.variable} ${leagueSpartan.variable} antialiased`}
       >
+        <Navbar />
         {children}
       </body>
     </html>

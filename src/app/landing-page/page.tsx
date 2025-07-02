@@ -1,0 +1,34 @@
+import Image from "next/image";
+import React from "react";
+
+import Form from "./form";
+
+function LandingPage() {
+  return (
+    <section className="px-12 lg:px-24 h-screen bg-white">
+      <div className="relative aspect-square w-full h-4/5 mt-8 rounded-md">
+        <Image
+          src={"/hero.jpg"}
+          alt="Hero image"
+          fill
+          className="rounded-4xl object-cover"
+        />
+        <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2">
+          <div className="text-white text-center">
+            <h3 className="font-semibold text-7xl font-heading opacity-90">
+              Soar To New Heights
+            </h3>
+            <p className="font-semibold text-2xl font-heading opacity-90">
+              Exclusive flight deals await!
+            </p>
+          </div>
+          <div>
+            <Form />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default LandingPage;
