@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Square_Peg, Montserrat, League_Spartan } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/common/Navbar/Navbar";
+import Navbar from "@/components/shared/Navbar";
 
 const squarePeg = Square_Peg({
   subsets: ["latin"],

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-import Form from "./form";
+import Form from "./Form";
 
 function LandingPage() {
   return (
@@ -22,7 +22,7 @@ function LandingPage() {
               Exclusive flight deals await!
             </p>
           </div>
-          <div>
+          <div className="mt-12">
             <Form />
           </div>
         </div>
