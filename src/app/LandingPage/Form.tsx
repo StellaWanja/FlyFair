@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -9,7 +8,6 @@ import ReturnTrip from "./TripType/ReturnTrip";
 
 function Form() {
   const [tripType, setTripType] = useState("return-trip");
-  const { register, control } = useForm<FormData>();
 
   return (
     <Card className="min-w-2xs md:min-w-md lg:min-w-3xl mx-auto bg-white/95 backdrop-blur-sm border-0 shadow-2xl animate-scale-in">
