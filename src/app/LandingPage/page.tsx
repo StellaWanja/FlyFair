@@ -13,9 +13,9 @@ function LandingPage() {
           fill
           className="rounded-none sm:rounded-4xl object-cover"
         />
-        <div className="absolute left-1/2 -translate-x-1/2 top-4/5 -translate-y-4/5 lg:top-1/2 lg:-translate-y-1/2">
-          <div className="text-white text-center">
-            <h3 className="font-semibold text-4xl md:text-5xl lg:text-7xl font-heading opacity-90">
+        <div className="absolute top-12 sm:top-1/2 sm:-translate-y-1/2 left-1/2 -translate-x-1/2 w-[90%] sm:w-auto text-center px-4">
+          <div className="text-white">
+            <h3 className="font-semibold text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-heading opacity-90 leading-snug sm:leading-tight">
               Soar To New Heights
             </h3>
             <p className="font-semibold text-xl lg:text-2xl font-heading opacity-90">

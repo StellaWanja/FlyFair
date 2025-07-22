@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 import ReturnTrip from "./TripType/ReturnTrip";
+import OneWay from "./TripType/OneWay";
 
 function Form() {
   const [tripType, setTripType] = useState("return-trip");
@@ -32,7 +33,7 @@ function Form() {
 
       <CardContent>
         {tripType === "return-trip" && <ReturnTrip />}
-        
+        {tripType === "one-way" && <OneWay />}
       </CardContent>
     </Card>
   );
