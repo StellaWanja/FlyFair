@@ -75,7 +75,7 @@ function ReturnTrip() {
       <Button
         type="submit"
         variant="default"
-        className="min-w-full text-center py-6"
+        className="min-w-full text-center py-6 cursor-pointer"
       >
         Search Flights
       </Button>

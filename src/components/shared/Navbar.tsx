@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { FaPlaneDeparture } from "react-icons/fa6";
 import { IoIosBed } from "react-icons/io";
 import { HiMenuAlt3 } from "react-icons/hi";
@@ -10,6 +9,7 @@ import { MdOutlineCancel } from "react-icons/md";
 import { AnimatePresence, motion } from "motion/react";
 
 import { menuVars, containerVars } from "@/utils/variants";
+import { Plane } from "lucide-react";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +19,7 @@ function Navbar() {
   }
 
   return (
-    <header className="font-body px-10 lg:px-20 bg-white text-black">
+    <header className="font-body px-10 lg:px-20 bg-gray-50 text-black">
       {/* navbar on large screens */}
       {!isOpen && (
         <nav className="flex justify-between items-center py-4 px-2">
@@ -29,12 +29,7 @@ function Navbar() {
             aria-label="FlyFair logo"
             className="flex gap-2 items-center "
           >
-            <Image
-              src="/logo.svg"
-              alt="Curioscribe logo"
-              width={50}
-              height={50}
-            />
+            <Plane className="h-8 w-8 text-[#005883]" />
             <h2 className="text-2xl font-bold text-[#005883]">FlyFair</h2>
           </Link>
 
@@ -77,7 +72,7 @@ function Navbar() {
           <button
             onClick={toggleMenu}
             aria-label="Toggle menu"
-            className="lg:hidden flex items-center justify-center text-button text-black bg-white w-[3rem] h-[3rem] rounded-xl shadow-md z-20"
+            className="lg:hidden flex items-center justify-center text-button text-black bg-gray-50 w-[3rem] h-[3rem] rounded-xl shadow-md z-20"
           >
             <HiMenuAlt3 />
           </button>
@@ -92,7 +87,7 @@ function Navbar() {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed left-0 top-0 w-full h-screen bg-white text-black p-10 z-50 origin-top"
+            className="fixed left-0 top-0 w-full h-screen bg-gray-50 text-black p-10 z-50 origin-top"
           >
             <div className="flex h-full flex-col py-8 px-4">
               <div className="flex justify-between items-center">
@@ -101,12 +96,7 @@ function Navbar() {
                   aria-label="FlyFair logo"
                   className="flex gap-2 items-center "
                 >
-                  <Image
-                    src="/logo.svg"
-                    alt="Curioscribe logo"
-                    width={50}
-                    height={50}
-                  />
+                  <Plane className="h-8 w-8 text-[#005883]" />
                   <h2 className="text-2xl font-bold text-[#005883]">FlyFair</h2>
                 </Link>
 

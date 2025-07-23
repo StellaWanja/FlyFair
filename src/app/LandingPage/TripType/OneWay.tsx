@@ -1,9 +1,78 @@
-import React from 'react'
+"use client";
+
+import React from "react";
+import { FaPlaneDeparture, FaPlaneArrival } from "react-icons/fa";
+import { useForm } from "react-hook-form";
+
+import { destinations } from "@/utils/constants";
+import Combobox from "@/components/shared/Combobox";
+import NumberStepper from "@/components/shared/NumberStepper/NumberStepper";
+import Dates from "@/components/shared/Dates";
+import { Button } from "@/components/ui/button";
+
+type OneWayFormData = {
+  fromDestination: string;
+  toDestination: string;
+  passengerCount: {
+    adults: number;
+    children: number;
+    infants: number;
+  };
+  departureDate: Date | null;
+};
 
 function OneWay() {
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<OneWayFormData>();
+
+  const onSubmit = (formValues: OneWayFormData) => {
+    console.log({ formValues });
+  };
+
   return (
-    <div>OneWay</div>
-  )
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="grid grid-cols-1 gap-5 lg:grid-cols-3"
+    >
+      <Combobox
+        control={control}
+        name="fromDestination"
+        icon={<FaPlaneDeparture />}
+        data={destinations}
+        title="Where From?"
+        info="airports"
+        error={errors.fromDestination}
+      />
+      <Combobox
+        control={control}
+        name="toDestination"
+        icon={<FaPlaneArrival />}
+        data={destinations}
+        title="Where To?"
+        info="airports"
+        error={errors.toDestination}
+      />
+      <NumberStepper control={control} name="passengerCount" />
+
+      <Dates
+        control={control}
+        name="departureDate"
+        title="Departure Date"
+        error={errors.departureDate}
+      />
+
+      <Button
+        type="submit"
+        variant="default"
+        className="min-w-full text-center py-6 cursor-pointer"
+      >
+        Search Flights
+      </Button>
+    </form>
+  );
 }
 
-export default OneWay
+export default OneWay;

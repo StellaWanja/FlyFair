@@ -2,17 +2,22 @@ import Image from "next/image";
 import React from "react";
 
 import Form from "./Form";
+import About from "./About";
 
 function LandingPage() {
   return (
-    <section className="px-0 sm:px-12 lg:px-24 h-screen bg-white">
-      <div className="relative aspect-square w-full h-4/5 mt-8 rounded-md">
-        <Image
-          src={"/hero.jpg"}
-          alt="Hero image"
-          fill
-          className="rounded-none sm:rounded-4xl object-cover"
-        />
+    <main className="bg-gray-50">
+      <section className="relative h-screen w-full rounded-md px-0 sm:px-12 lg:px-24">
+        <div className="h-full w-full">
+          <Image
+            src={"/hero.jpg"}
+            alt="Hero image"
+            className="rounded-none sm:rounded-4xl object-cover w-full h-full"
+            width={0}
+            height={0}
+            sizes="100vw"
+          />
+        </div>
         <div className="absolute top-12 sm:top-1/2 sm:-translate-y-1/2 left-1/2 -translate-x-1/2 w-[90%] sm:w-auto text-center px-4">
           <div className="text-white">
             <h3 className="font-semibold text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-heading opacity-90 leading-snug sm:leading-tight">
@@ -26,8 +31,10 @@ function LandingPage() {
             <Form />
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <About />
+    </main>
   );
 }
 
